@@ -24,7 +24,7 @@
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Create a bot</h1>
+                                        <h1 class="modal-title fs-5">Create a bot</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -73,9 +73,56 @@
                                     <td>{{ bot.title }}</td>
                                     <td>{{ bot.createtime }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-secondary"
-                                            style="margin-right: 10px;">Modify</button>
-                                        <button type="button" class="btn btn-danger">Delete</button>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-secondary" style="margin-right: 10px;"
+                                            data-bs-toggle="modal" :data-bs-target="'#update-bot-btn-' + bot.id">
+                                            Modify
+                                        </button>
+                                        <button type="button" class="btn btn-danger"
+                                            @click="remove_bot(bot)">Delete</button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" :id="'update-bot-btn-' + bot.id" tabindex="-1">
+                                            <div class="modal-dialog modal-xl">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5">Modify the bot</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <div class="mb-3">
+                                                            <label for="add-bot-title" class="form-label">Title</label>
+                                                            <input v-model="bot.title" type="text" class="form-control"
+                                                                id="add-bot-title"
+                                                                placeholder="Please enter bot's name.">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="add-bot-description"
+                                                                class="form-label">Description</label>
+                                                            <textarea v-model="bot.description" class="form-control"
+                                                                id="add-bot-description" rows="3"
+                                                                placeholder="Describe your bot."></textarea>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="add-bot-code" class="form-label">Code</label>
+                                                            <textarea v-model="bot.content" class="form-control"
+                                                                id="add-bot-code" rows="7"
+                                                                placeholder="Please code for bot."></textarea>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <div class="error-message">{{ bot.error_message}}</div>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary"
+                                                            @click="update_bot(bot)">Save Changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -148,10 +195,56 @@ export default {
             })
         }
 
+        const remove_bot = (bot) => {
+            $.ajax({
+                url: "http://127.0.0.1:8080/user/bot/remove/",
+                type: "post",
+                data: {
+                    bot_id: bot.id,
+                },
+                headers: {
+                    Authorization: "Bearer " + store.state.user.token,
+                },
+                success(resp) {
+                    if (resp.error_message === "success") {
+                        refresh_bots();
+                    }
+                }
+            })
+        }
+
+        const update_bot = (bot) => {
+            botadd.error_message = "";
+
+            $.ajax({
+                url: "http://127.0.0.1:8080/user/bot/update/",
+                type: "post",
+                data: {
+                    bot_id: bot.id,
+                    title: bot.title,
+                    description: bot.description,
+                    content: bot.content,
+                },
+                headers: {
+                    Authorization: "Bearer " + store.state.user.token,
+                },
+                success(resp) {
+                    if (resp.error_message === "success") {
+                        Modal.getInstance('#update-bot-btn-' + bot.id).hide();
+                        refresh_bots();
+                    } else {
+                        botadd.error_message = resp.error_message;
+                    }
+                },
+            })
+        }
+
         return {
             bots,
             botadd,
             add_bot,
+            remove_bot,
+            update_bot,
         }
     }
 }
