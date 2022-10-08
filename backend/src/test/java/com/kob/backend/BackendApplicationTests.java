@@ -19,9 +19,4 @@ class BackendApplicationTests {
         System.out.println(passwordEncoder.encode("p4"));
 //        System.out.println(passwordEncoder.matches("p2", "$2a$10$KTWBvIN/uQB8.A0hf/qzLulKelgrjSjrxjtyb.HDVbeZFBDVfhma6"));
     }
-    @Test
-    void printDate(){
-        System.out.println(new Date());
-    }
-
 }
