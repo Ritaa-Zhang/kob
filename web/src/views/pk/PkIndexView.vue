@@ -14,7 +14,7 @@ export default {
 
     setup() {
         const store = useStore();
-        const socketUrl = `ws://127.0.0.1:8080/websocket/${store.state.user.id}/`;
+        const socketUrl = `ws://127.0.0.1:8080/websocket/${store.state.user.token}/`;
 
         let socket = null;
         onMounted(() => {
