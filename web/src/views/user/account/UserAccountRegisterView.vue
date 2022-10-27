@@ -5,15 +5,18 @@
                 <form @submit.prevent="register">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input v-model="username" type="text" class="form-control" id="username" placeholder="please enter your username">
+                        <input v-model="username" type="text" class="form-control" id="username"
+                            placeholder="please enter your username">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input v-model="password" type="password" class="form-control" id="password" placeholder="please enter your password">
+                        <input v-model="password" type="password" class="form-control" id="password"
+                            placeholder="please enter your password">
                     </div>
                     <div class="mb-3">
                         <label for="confirmedPassword" class="form-label">Confirm Password</label>
-                        <input v-model="confirmedPassword" type="password" class="form-control" id="confirmedPassword" placeholder="please enter your password again">
+                        <input v-model="confirmedPassword" type="password" class="form-control" id="confirmedPassword"
+                            placeholder="please enter your password again">
                     </div>
                     <div class="error-message">{{ error_message }}</div>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -45,7 +48,7 @@ export default {
         const register = () => {
             error_message.value = "";
             $.ajax({
-                url: "http://127.0.0.1:8080/user/account/register/",
+                url: "http://127.0.0.1:3000/user/account/register/",
                 type: "post",
                 data: {
                     username: username.value,
@@ -54,7 +57,7 @@ export default {
                 },
                 success(resp) {
                     if (resp.error_message === "success") {
-                        router.push({name: "user_account_login"});
+                        router.push({ name: "user_account_login" });
                     } else {
                         error_message.value = resp.error_message;
                     }
@@ -76,11 +79,12 @@ export default {
 }
 </script>
 
-<style scoped> 
+<style scoped>
 button {
-    width: 100%;
-}
-div.error-message {
-    color: red;
-}
+     width: 100%;
+ }
+
+ div.error-message {
+     color: red;
+ }
 </style>

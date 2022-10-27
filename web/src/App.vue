@@ -16,7 +16,7 @@ export default {
 
   setup() {
     // $.ajax({
-    //   url: "http://127.0.0.1:8080/user/account/token/",
+    //   url: "http://127.0.0.1:3000/user/account/token/",
     //   type: "post",
     //   data: {
     //     username: 'zrj',
@@ -31,7 +31,7 @@ export default {
     // });
 
     // $.ajax({
-    //   url: "http://127.0.0.1:8080/user/account/info/",
+    //   url: "http://127.0.0.1:3000/user/account/info/",
     //   type: "get",
     //   headers: {
     //     Authorization: "Bearer " + "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmNGI5OGM0MGIwNDc0YzBlODM5ZDllYTA0MjkwYzM2MCIsInN1YiI6IjIiLCJpc3MiOiJzZyIsImlhdCI6MTY2NDQxMjIyMCwiZXhwIjoxNjY1NjIxODIwfQ.3PCZSwUJ-0Yj6ct0PBf2vwVSfNYYhI9UIpHbjpYHsyQ",
@@ -45,7 +45,7 @@ export default {
     // });
 
     // $.ajax({
-    //   url: "http://127.0.0.1:8080/user/account/register/",
+    //   url: "http://127.0.0.1:3000/user/account/register/",
     //   type: "post",
     //   data: {
     //     username: 'zrj2',

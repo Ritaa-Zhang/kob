@@ -14,7 +14,7 @@ import java.util.UUID;
 public class Consumer extends Thread{
     private Bot bot;
     private static RestTemplate restTemplate;
-    private final static String receiveBotMoveUrl = "http://127.0.0.1:8080/pk/receive/bot/move/";
+    private final static String receiveBotMoveUrl = "http://127.0.0.1:3000/pk/receive/bot/move/";
 
     @Autowired
     public void setRestTemplate(RestTemplate restTemplate) {

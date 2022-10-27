@@ -51,7 +51,7 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                        <div class="error-message">{{ botadd.error_message}}</div>
+                                        <div class="error-message">{{ botadd.error_message }}</div>
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
                                         <button type="button" class="btn btn-primary" @click="add_bot">Create</button>
@@ -118,7 +118,7 @@
 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <div class="error-message">{{ bot.error_message}}</div>
+                                                        <div class="error-message">{{ bot.error_message }}</div>
                                                         <button type="button" class="btn btn-secondary"
                                                             data-bs-dismiss="modal">Close</button>
                                                         <button type="button" class="btn btn-primary"
@@ -168,7 +168,7 @@ export default {
 
         const refresh_bots = () => {
             $.ajax({
-                url: "http://127.0.0.1:8080/user/bot/getlist/",
+                url: "http://127.0.0.1:3000/user/bot/getlist/",
                 type: "get",
                 headers: {
                     Authorization: "Bearer " + store.state.user.token,
@@ -185,7 +185,7 @@ export default {
             botadd.error_message = "";
 
             $.ajax({
-                url: "http://127.0.0.1:8080/user/bot/add/",
+                url: "http://127.0.0.1:3000/user/bot/add/",
                 type: "post",
                 data: {
                     title: botadd.title,
@@ -211,7 +211,7 @@ export default {
 
         const remove_bot = (bot) => {
             $.ajax({
-                url: "http://127.0.0.1:8080/user/bot/remove/",
+                url: "http://127.0.0.1:3000/user/bot/remove/",
                 type: "post",
                 data: {
                     bot_id: bot.id,
@@ -231,7 +231,7 @@ export default {
             botadd.error_message = "";
 
             $.ajax({
-                url: "http://127.0.0.1:8080/user/bot/update/",
+                url: "http://127.0.0.1:3000/user/bot/update/",
                 type: "post",
                 data: {
                     bot_id: bot.id,
