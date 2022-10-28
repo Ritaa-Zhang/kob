@@ -28,8 +28,8 @@
                 </div>
             </div>
             <div class="col-12" style="text-align: center; padding-top: 15vh;">
-                <button @click="click_match_btn" type="button"
-                    class="btn btn-outline-light btn-lg">{{      match_btn_info      }}</button>
+                <button @click="click_match_btn" type="button" class="btn btn-outline-light btn-lg">{{ match_btn_info
+                }}</button>
             </div>
         </div>
     </div>
@@ -68,7 +68,7 @@ export default {
 
         const refresh_bots = () => {
             $.ajax({
-                url: "http://127.0.0.1:3000/user/bot/getlist/",
+                url: "https://app3779.acapp.acwing.com.cn/api/user/bot/getlist/",
                 type: "get",
                 headers: {
                     Authorization: "Bearer " + store.state.user.token,
