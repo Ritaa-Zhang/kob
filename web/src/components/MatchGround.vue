@@ -123,7 +123,7 @@ div.user-select-bot {
 }
 
 div.user-select-bot>select {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 }
 </style>>
