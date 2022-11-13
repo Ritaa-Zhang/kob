@@ -27,7 +27,7 @@
 
 ## Description
 
-<p align="center"><img src="./web/src/assets/readme_assets/1.gif" width="80%"></p>
+<p align="center"><img src="./web/src/assets/readme_assets/1.gif" width="100%"></p>
 
 Implemented a real-time battle platform from scratch, which also features game replay, rankings and more. 
 
@@ -47,10 +47,10 @@ Realized eight web pages with Vue and Vuex, implemented three microservices base
   <p align="center"><img src="./web/src/assets/readme_assets/2.png" width="100%"></p>
 
 - Before starting a match, select the Bot that will play for you in the drop-down menu. If you do not make a selection, you will control the snake's movement yourself by default.
-   <p align="center"><img src="./web/src/assets/readme_assets/3.png" width="80%"></p>
+   <p align="center"><img src="./web/src/assets/readme_assets/3.png" width="100%"></p>
 
 - When the game starts, you will be born in the map's lower left or upper right corner, and the text below the map will indicate your birth location.
-    <p align="center"><img src="./web/src/assets/readme_assets/4.png" width="80%"></p>
+    <p align="center"><img src="./web/src/assets/readme_assets/4.png" width="100%"></p>
 
 - If you choose to fight in person, please focus on the game map and use the keyboard to control the direction of your snake by typing w(up), d(right), s(down), and a(left).
   **View a [demo](https://youtu.be/IPBByE7_3FE) of Player vs. Player**.
@@ -73,27 +73,27 @@ Realized eight web pages with Vue and Vuex, implemented three microservices base
   - **Player vs. Bot** or **Player vs. Player**（WebSocket）
     - Players control the direction of the snake by keyboard.
   - **Dynamically compile and execute Bot code** (BotRunningSystem microservice achieve this)
-  <p align="center"><img src="./web/src/assets/readme_assets/5.png" width="80%"></p>
+  <p align="center"><img src="./web/src/assets/readme_assets/5.png" width="100%"></p>
 
 - **Matchup List**
   - **Matchup list page**
     - Each time a game is finished, add it to the matchup list.
   - **Game replay page**
     - Select any game from the reverse chronological game list to view the game replay.
-  <p align="center"><img src="./web/src/assets/readme_assets/6.png" width="80%"></p>
+  <p align="center"><img src="./web/src/assets/readme_assets/6.png" width="100%"></p>
 
 - **Rankings**
   - Each player has the same rating (1500) when registering, with five points added for a winning game and two points subtracted for a losing game. 
   - Players with close ratings will be more likely to be matched together to start a game.
-  <p align="center"><img src="./web/src/assets/readme_assets/7.png" width="80%"></p>
+  <p align="center"><img src="./web/src/assets/readme_assets/7.png" width="100%"></p>
 
 - **User Center**
   - Registration
   - Login
   - My bot list
   - Create or modify a bot
-  <p align="center"><img src="./web/src/assets/readme_assets/2.png" width="80%"></p>
-  <p align="center"><img src="./web/src/assets/readme_assets/8.png" width="80%"></p>
+  <p align="center"><img src="./web/src/assets/readme_assets/2.png" width="100%"></p>
+  <p align="center"><img src="./web/src/assets/readme_assets/8.png" width="100%"></p>
 
 
 ### Game Parameter
@@ -268,7 +268,7 @@ Realized eight web pages with Vue and Vuex, implemented three microservices base
 
 ## Communication process diagram
 
-<p align="center"><img src="./web/src/assets/readme_assets/10.png" width="80%"></p>
+<p align="center"><img src="./web/src/assets/readme_assets/10.png" width="90%"></p>
 
 ## Q & A
 
